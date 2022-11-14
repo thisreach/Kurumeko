@@ -1,0 +1,56 @@
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
+const User = require("../../schemas/users");
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName("daily")
+    .setDescription("Resgate seu daily"),
+
+  async execute(interaction, client, args) {
+    const userProfile =
+      (await User.findOne({ id: interaction.id })) ||
+      new User({ id: interaction.id });
+
+    if (userProfile.cooldowns.daily > Date.now()) {
+      const calc = userProfile.cooldowns.daily - Date.now();
+
+      return interaction.reply({
+        embeds: [
+          new EmbedBuilder()
+            .setColor("Blue")
+            .setDescription(
+              `⌛ Você coletou seu daily, aguarde ${ms(calc).hours} horas ${
+                ms(calc).minutes
+              } minutos ${ms(calc).seconds} segundos`
+            ),
+        ],
+        ephemeral: true,
+      });
+    }
+
+    userProfile.money += 50
+    userProfile.cooldowns.daily = Date.now() + 86400000
+    userProfile.save()
+
+    return interaction.reply({
+        embeds: [ new EmbedBuilder()
+          .setColor('Blue')
+          .setDescription(`💰 Você coletou do seu daily \` 50 💵 \` dinheiro`) ]
+    })
+
+  },
+};
+
+function ms(ms) {
+  const seconds = ~~(ms / 1000);
+  const minutes = ~~(seconds / 60);
+  const hours = ~~(minutes / 60);
+  const days = ~~(hours / 24);
+
+  return {
+    days,
+    hours: hours % 24,
+    minutes: minutes % 60,
+    seconds: seconds % 60,
+  };
+}
