@@ -7,9 +7,17 @@ module.exports = {
     .setDescription("Resgate seu daily"),
 
   async execute(interaction, client, args) {
-    const userProfile =
-      (await User.findOne({ id: interaction.id })) ||
-      new User({ id: interaction.id });
+
+    let userProfile = (await User.findOne({ userId: interaction.user.id }))
+
+    if (!userProfile){
+        const newUser = new User({
+            userId: interaction.user.id
+        })
+        await newUser.save()
+
+        userProfile = (await User.findOne({ userId: interaction.id }))
+    }
 
     if (userProfile.cooldowns.daily > Date.now()) {
       const calc = userProfile.cooldowns.daily - Date.now();

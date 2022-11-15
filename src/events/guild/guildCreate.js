@@ -3,7 +3,7 @@ const chalk = require('chalk')
 
 module.exports = {
   name: "guildCreate",
-  async execute(guild) {
+  async execute(guild, client) {
     if (!guild.available) return;
 
 	await db.createServer(guild.id);
