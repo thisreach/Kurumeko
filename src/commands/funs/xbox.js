@@ -48,19 +48,19 @@ module.exports = {
           embeds: [embed],
         });
       } else {
-        ctx.fillText(`${String}`, 236, 349);
+        ctx.fillText(`${string}`, 236, 349);
 
         const attachment = new AttachmentBuilder(canvas.toBuffer(), {
           name: "xbox.png",
         });
-        let embedXbox = new EmbedBuilder()
+        const embedXbox = new EmbedBuilder()
           .setColor("Green")
           .setImage("attachment://xbox.png");
 
         interaction.reply({
           files: [attachment],
           content: `- 🔔 Nova conquista`,
-          embeds: [embed],
+          embeds: [embedXbox],
         });
       }
     }

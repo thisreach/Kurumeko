@@ -49,17 +49,5 @@ client.login(TOKEN);
   await connect(DatabaseToken).catch(console.error);
 })();
 
-const antiSpam = new antispam({
-  warnThreshold: 3, 
-  muteTreshold: 6,
-  kickTreshold: 9, 
-  banTreshold: 12, 
-  warnMessage: "Poderia parar de floodar!", 
-  muteMessage: "Você foi mutado por floodar!", 
-  kickMessage: "Você foi kickado por floodar!", 
-  banMessage: "Você foi mutado por floodar!", 
-  unMuteTime: 60, 
-  verbose: true, 
-  removeMessages: true, 
-  ignoredPermissions: [PermissionFlagsBits.Administrator], 
-});
+process.on('unhandledRejection', error => console.log(error));
+process.on('uncaughtException', error => console.log(error));
