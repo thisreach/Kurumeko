@@ -972,7 +972,7 @@ module.exports = {
           clan.clan_money -= config.clan.chat_cost;
           await clan.save();
 
-          const category = "1048269739983642694"; // Coloque o ID da categoria que deseja que fique, caso contrario ficará fora de categoria
+          const category = config.clan.category; // Coloque o ID da categoria que deseja que fique, caso contrario ficará fora de categoria
 
           if (!interaction.guild.channels.cache.get(category)) category = null;
 

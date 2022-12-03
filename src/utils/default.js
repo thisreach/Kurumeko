@@ -13,17 +13,14 @@ module.exports = {
     
         rename_cost: 500, //// Renomear clã
         rename_level: 5, //// Level do clã para pode renomear
-        rename_character: 50, ////Increase +50 character to rename clan!
+        rename_character: 50, ////Máximo de letras!
     
-        /// This auto update!
+        role_cost: 500000, //// Custo do cargo!
+        role_level: 7, //// Level necessário!
     
-        role_cost: 500000, //// Role cost!
-        role_level: 7, //// Need level 7 to role clan!
-    
-        chat_cost: 1000000, //// Chat cost!
-        chat_level: 8, //// Need level 8 to chat clan!
-    
-        voice_cost: 2000000, //// Voice cost!
-        voice_level: 10, //// Need level 10 to voice clan!
+        chat_cost: 1000000, //// Custo de chat!
+        chat_level: 8, //// Level necessário!
+
+        category: 1048269739983642694 // Cátegoria que vai ficar o chat do clã
     },
 }
