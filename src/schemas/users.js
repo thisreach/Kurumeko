@@ -14,7 +14,7 @@ const userSchema = new Schema({
   },
   rank: String,
   reputation: Number,
-  instagram: { type: String, default: null },
+  aboutme: { type: String, default: null },
 
 });
 

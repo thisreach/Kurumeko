@@ -19,6 +19,7 @@
     "discord.js-akinator": "^4.0.4",
     "discord.js-music": "^2.1.0",
     "dotenv": "^16.0.3",
+    "humanize-duration": "^3.27.3",
     "moment": "^2.29.4",
     "mongoose": "^6.6.5",
     "ms": "^2.1.3"

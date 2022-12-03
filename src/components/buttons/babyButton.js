@@ -11,7 +11,7 @@ module.exports = {
       guildId: interaction.guild.id
     })
 
-    let babyRole = interaction.guild.roles.cache.get(guildProfile.roleBaby);
+    const babyRole = interaction.guild.roles.cache.get(guildProfile.roleBaby);
 
     if (interaction.member.roles.cache.get(babyRole.id)) {
       interaction.reply({

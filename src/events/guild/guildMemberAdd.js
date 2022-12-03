@@ -24,14 +24,16 @@ module.exports = {
 
     if(!channel) return;
 
-    if (!guilddb.welcomeMessageEnable) {} else {
+    if (!guilddb.welcomeMessageEnable) {
+      console.log(`${member} entrou no servidor.`)
+    } else {
     const embed = new EmbedBuilder()
     .setAuthor({name: `${member.user.tag}`, iconURL: `${member.user.displayAvatarURL({dynamic: true})}`})
     .setTitle(`BOAS VINDAS!`)
     .setDescription(`${member} *É o novo membro do servidor, seja muito bem vindo(a) em **${member.guild.name}**.*\n\nUma boa curiosidade: Você é o membro **${member.guild.memberCount}** do servidor!`)
-    .addFields({name: `Regras:`, value: `<#1020841038992130088>`, inline: true},
-    {name: `Resgistre-se:`, value: `<#1020844261291335771>`, inline: true},
-    {name: `Interaja Em:`, value: `<#1020841048756473997>`})
+    .addFields({name: `Regras:`, value: `<#1048268475405193226>`, inline: true},
+    {name: `Resgistre-se:`, value: `<#1048268478102110298>`, inline: true},
+    {name: `Interaja Em:`, value: `<#1048268479108759635>`})
     .setThumbnail(`${member.user.displayAvatarURL({ dynamic: true})}`)
     .setFooter({text: `${member.guild.name}`, iconURL: `${member.guild.iconURL({ dynamic: true})}`})
     .setTimestamp(new Date())

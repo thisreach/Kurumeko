@@ -67,7 +67,7 @@ module.exports = {
               });
 
             await interaction.reply({
-              embeds: [embed],
+              embeds: [embed], ephemeral: true
             });
           }
           break;
@@ -104,7 +104,7 @@ module.exports = {
               });
 
             await interaction.reply({
-              embeds: [embedOff],
+              embeds: [embedOff], ephemeral: true
             });
           }
           break;
@@ -131,7 +131,7 @@ module.exports = {
               });
 
             await interaction.reply({
-              embeds: [embedRole],
+              embeds: [embedRole], ephemeral: true
             });
           }
           break;

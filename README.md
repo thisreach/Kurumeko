@@ -6,6 +6,7 @@
 * 🔥 Slash Commands
 * 💪 Handlers/Eventos
 * 🍃 MongoDB Suporte
+* 🔪 Sistema de clã
 
 ## Instalação
 

@@ -36,14 +36,14 @@ module.exports = {
       });
     }
 
-    userProfile.money += 50
+    userProfile.money += 100
     userProfile.cooldowns.daily = Date.now() + 86400000
     userProfile.save()
 
     return interaction.reply({
         embeds: [ new EmbedBuilder()
           .setColor('Blue')
-          .setDescription(`💰 Você coletou do seu daily \` 50 💵 \` dinheiro`) ]
+          .setDescription(`💰 Você coletou do seu daily \` 100 💵 \` dinheiro`) ]
     })
 
   },
@@ -62,3 +62,5 @@ function ms(ms) {
     seconds: seconds % 60,
   };
 }
+
+

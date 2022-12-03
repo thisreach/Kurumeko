@@ -2,7 +2,6 @@ require("dotenv").config();
 const { TOKEN, DatabaseToken } = process.env;
 const fs = require("fs");
 const { connect } = require("mongoose");
-const antispam = require('discord-anti-spam')
 const { Client, Collection, GatewayIntentBits, Partials, PermissionFlagsBits } = require("discord.js");
 
 const client = new Client({
@@ -23,6 +22,7 @@ const client = new Client({
     GatewayIntentBits.GuildBans,
     GatewayIntentBits.GuildPresences,
     GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
   ],
 });
 
